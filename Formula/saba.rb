@@ -5,11 +5,11 @@
 class Saba < Formula
   desc "Declarative development framework saba"
   homepage "https://github.com/asweed888/saba"
-  version "0.0.1-beta"
+  version "0.0.1"
 
   on_macos do
-    url "https://github.com/asweed888/saba/releases/download/v0.0.1-beta/saba_darwin_all.tar.gz"
-    sha256 "edf10d67bd13dab49863e719e804f7f7282e604c1b5781fff79ab194f10282e5"
+    url "https://github.com/asweed888/saba/releases/download/v0.0.1/saba_darwin_all.tar.gz"
+    sha256 "4d1f4aced8557c90f1e46959d9e2cd82bfe1151cfd91deb558a7fd76b373dc9b"
 
     def install
       bin.install "saba"
@@ -18,24 +18,24 @@ class Saba < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/asweed888/saba/releases/download/v0.0.1-beta/saba_linux_armv6.tar.gz"
-      sha256 "61029cf4e47d0599ca41f4afd8d398f54120ec55f55c3d6138c5fabaeb46012e"
+      url "https://github.com/asweed888/saba/releases/download/v0.0.1/saba_linux_armv6.tar.gz"
+      sha256 "1f064e8afcd64b90e731eb902845b68861d1855217bd39d55b725c126f65a3e1"
 
       def install
         bin.install "saba"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/asweed888/saba/releases/download/v0.0.1-beta/saba_linux_x86_64.tar.gz"
-      sha256 "c725dd2aa0c82af36ed266b09c5ac354d3c2571907b593ac495fdd6c5092802f"
+      url "https://github.com/asweed888/saba/releases/download/v0.0.1/saba_linux_x86_64.tar.gz"
+      sha256 "84f64b244ebc8305293facadd5fd78bdcaa61d9669868754ac577afe57677cb5"
 
       def install
         bin.install "saba"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asweed888/saba/releases/download/v0.0.1-beta/saba_linux_arm64.tar.gz"
-      sha256 "f1acc51df40566abc3ab280c3145a9b9dfcd87b31a538205f541a9d518859f3c"
+      url "https://github.com/asweed888/saba/releases/download/v0.0.1/saba_linux_arm64.tar.gz"
+      sha256 "b01126a7c5ec45bfdb2df3469d36b1fc7305294f6216b88fba9e95757a5a5ffb"
 
       def install
         bin.install "saba"
