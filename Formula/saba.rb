@@ -5,11 +5,11 @@
 class Saba < Formula
   desc "Declarative development framework saba"
   homepage "https://github.com/asweed888/saba"
-  version "1.0.1"
+  version "1.0.2"
 
   on_macos do
-    url "https://github.com/asweed888/saba/releases/download/v1.0.1/saba_darwin_all.tar.gz"
-    sha256 "1bd3fb03f4fa7d0bc21d171737c3ecbcdb49f65dd5012881a48784c126953b1c"
+    url "https://github.com/asweed888/saba/releases/download/v1.0.2/saba_darwin_all.tar.gz"
+    sha256 "36b26be5b3dd68132bac42462457c3732dd58f73037569d538c88b851606ae7f"
 
     def install
       bin.install "saba"
@@ -17,25 +17,25 @@ class Saba < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asweed888/saba/releases/download/v1.0.1/saba_linux_arm64.tar.gz"
-      sha256 "6aff6263407c49191e519b1ac3bb3805aee72f39cdb6c89a6aa1c79d2a3c6ff3"
+    if Hardware::CPU.intel?
+      url "https://github.com/asweed888/saba/releases/download/v1.0.2/saba_linux_x86_64.tar.gz"
+      sha256 "77df664dc44b3a4517f9093d188ac9be99300a8fc009723b85f6d1824b8a64de"
 
       def install
         bin.install "saba"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/asweed888/saba/releases/download/v1.0.1/saba_linux_armv6.tar.gz"
-      sha256 "aac673901601bbea1bd417a56d839bca0c7dcf264ac8762c62142525be767259"
+      url "https://github.com/asweed888/saba/releases/download/v1.0.2/saba_linux_armv6.tar.gz"
+      sha256 "530394bdb11242a2557d15ab44c01949336fc09103ddaa5a3be8132eb842b293"
 
       def install
         bin.install "saba"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/asweed888/saba/releases/download/v1.0.1/saba_linux_x86_64.tar.gz"
-      sha256 "9883cbf5aae66897de1e6373e6bd9652a12d514cbaaddb25f3db86aaa5651fa4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/asweed888/saba/releases/download/v1.0.2/saba_linux_arm64.tar.gz"
+      sha256 "7d100a1f305cf8cf7bd42dfa28f89461753c7fd879dcd2f4413f91ef9f4b9553"
 
       def install
         bin.install "saba"
