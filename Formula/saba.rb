@@ -5,20 +5,20 @@
 class Saba < Formula
   desc "Declarative development framework saba"
   homepage "https://github.com/asweed888/saba"
-  version "1.1.5"
+  version "1.1.6"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/asweed888/saba/releases/download/v1.1.5/saba_Darwin_arm64.tar.gz"
-      sha256 "1de5b8f880580c27ab2bcb714789461bb0dd3d501801fb040c7cb66830162e67"
+    if Hardware::CPU.intel?
+      url "https://github.com/asweed888/saba/releases/download/v1.1.6/saba_Darwin_x86_64.tar.gz"
+      sha256 "939b61d88752b11669e0b9f424fd8bee77ee537c88fbcd40ef818b8a3c11cfeb"
 
       def install
         bin.install "saba"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/asweed888/saba/releases/download/v1.1.5/saba_Darwin_x86_64.tar.gz"
-      sha256 "2ef5e1ee478f6aca78a11a3106ce9fa76b720594f58cd0fbab9b58ac7de74755"
+    if Hardware::CPU.arm?
+      url "https://github.com/asweed888/saba/releases/download/v1.1.6/saba_Darwin_arm64.tar.gz"
+      sha256 "6423fb61e5bbded20bf9b3ab93d24a397fe084c313d3a86ff6a6b94988a52c03"
 
       def install
         bin.install "saba"
@@ -27,25 +27,25 @@ class Saba < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/asweed888/saba/releases/download/v1.1.5/saba_Linux_arm64.tar.gz"
-      sha256 "1f80cc871d4158e54c583eaf6d997570bf0459c10cbed1300da649dc23a1bd67"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/asweed888/saba/releases/download/v1.1.6/saba_Linux_arm_v6.tar.gz"
+      sha256 "fe5c903d3f2bbc6091fa2edfc7740933b029f2ca7772435cae08412933e2a3cf"
 
       def install
         bin.install "saba"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/asweed888/saba/releases/download/v1.1.5/saba_Linux_x86_64.tar.gz"
-      sha256 "06fde4ddb99a0d53d0e897e49721cab5ecf22c93b165450972e3c1bc24a48705"
+      url "https://github.com/asweed888/saba/releases/download/v1.1.6/saba_Linux_x86_64.tar.gz"
+      sha256 "66a69d8dfe580f7ad8ad22b623e9695163c58e37162db819fa0b4552d87fd1ff"
 
       def install
         bin.install "saba"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/asweed888/saba/releases/download/v1.1.5/saba_Linux_arm_v6.tar.gz"
-      sha256 "2a2e4a1e3dcc1fa5dff4778e9368fb5653e22b0934deca91dd3b22092ef773d3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/asweed888/saba/releases/download/v1.1.6/saba_Linux_arm64.tar.gz"
+      sha256 "eedb1c533081fd1baf632bab7700a759561719594fe5b0183f3724d16aa4105c"
 
       def install
         bin.install "saba"
